@@ -62,7 +62,7 @@ $(function() {
 </script>
 
 <body>
-<p><strong><font size="5">Repair Status Administration 1.0</font></strong></p>
+<p><strong><font size="5">Repair Status Administration 1.1</font></strong></p>
 <hr>
 <p><strong>Add a Ticket</strong></p>
 <form id="add" name="add" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
@@ -70,6 +70,15 @@ $(function() {
     <label for="textfield">Invoice ID:</label>
     <input name="invid" type="text" id="invid" size="5" onKeyDown="limitText(this.form.invid,this.form.countdown,5);" onKeyUp="limitText(this.form.invid,this.form.countdown,5);"; />
   </p>
+    <?
+  	require("repairstatus-config.php");
+	if($enablesecurity == 1) {
+		echo "<p>";
+		echo "<label for=\"pincode\">4 Digit PIN Code <b>(REQUIRED)</b>:</label>";
+		echo "<input type=\"text\" size=\"4\" name=\"pincode\" id=\"pincode\" onKeyDown=\"limitText(this.form.invid,this.form.countdown,4);\" onKeyUp=\"limitText(this.form.invid,this.form.countdown,4);\"; />";
+  		echo "</p>";
+	}
+	?>
   <p>
     <label for="textfield">Assigned to Tech:</label>
     <?
@@ -121,16 +130,19 @@ foreach($delivertypes as $item){
 ?>
   </p>
   <p>
+  <label for="delivertime">Estimated Delivery Time (if DELIVER TO CUSTOMER):</label>
+    <input type="text" name="delivertime" id="delivertime" >
+  </p>
+  <p>
     <label for="comments">Comments:</label>
     <textarea name="comments" cols="50" rows="3" id="comments"></textarea>
   </p>
-  <p>
     <input type="submit" name="btnSubmit" id="btnSubmit" value="Add Invoice">
   </p>
 </form>
 <hr>
 <p><strong>Edit a Ticket</strong></p>
-<p>(Leave field blank to preserve existing data)</p>
+<p>(Leave field(s) blank to preserve existing data)</p>
 <form id="change" name="change" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
   <p> Invoice ID:
     <?
@@ -147,6 +159,15 @@ echo "<option value='".$row["invid"]."'>".$row["invid"]."</option>";
 echo "</select>";
 ?>
   </p>
+      <?
+  	require("repairstatus-config.php");
+	if($enablesecurity == 1) {
+		echo "<p>";
+		echo "<label for=\"pincode2\">4 Digit PIN Code <b>(Leave blank for no change)</b>:</label>";
+		echo "<input type=\"text\" size=\"4\" name=\"pincode2\" id=\"pincode2\" >";
+  		echo "</p>";
+	}
+	?>
   <p>
     <label for="textfield">Assigned to Tech:</label>
     <?
@@ -202,6 +223,10 @@ foreach($delivertypes as $item){
 	echo "</select>";
 ?>
   </p>
+    <p>
+  <label for="delivertime">Estimated Delivery Time (if DELIVER TO CUSTOMER):</label>
+    <input type="text" name="delivertime2" id="delivertime2" >
+  </p>
   <p>
     <label for="comments2">Comments:</label>
     <textarea name="comments2" cols="50" rows="3" id="comments2"></textarea>
@@ -234,7 +259,7 @@ echo "</select>";
   </p>
 </form>
 <hr>
-<p align="center"><strong>Repair Status Information Script 1.0</strong><br>
+<p align="center"><strong>Repair Status Information Script 1.1</strong><br>
   Copyright &copy; 2014 Chris Formeister. All Rights Reserved.
 </p>
 </body>
@@ -244,7 +269,6 @@ echo "</select>";
 function addticket() {
 	
 require "repairadmin-config.php";
-
 $cn=mysql_connect($servername, $username, $password) or die(mysql_error());
 mysql_select_db($dbname, $cn) or die(mysql_error());
 $sql = "SELECT invid FROM repairs";
@@ -256,6 +280,12 @@ while($row = mysql_fetch_array($rs)){
 	}
 }
 mysql_free_result($rs);
+
+
+
+
+
+
 
 if(empty($invid)) {
 	echo "<b><font color=\"red\">You must enter a Invoice ID to add!</b></font><hr>";
@@ -269,6 +299,7 @@ if (strlen($invid) < 5) {
 		echo "<b><font color=\"red\">The Invoice ID must be 5 digits!</b></font><hr>";
 		return;
 }
+
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
@@ -278,8 +309,8 @@ if ($conn->connect_error) {
 
 // sql to add a record
 
-$sql = "INSERT INTO repairs (invid, status, tech, rpdate, rptime, exdate, extime, comments, delivertype)
-VALUES ('$invid', '$status', '$tech', '$rpdate', '$rptime', '$exdate', '$extime', '$comments', '$delivertype')";
+$sql = "INSERT INTO repairs (invid, status, tech, rpdate, rptime, exdate, extime, comments, delivertype, delivertime, pincode)
+VALUES ('$invid', '$status', '$tech', '$rpdate', '$rptime', '$exdate', '$extime', '$comments', '$delivertype', '$delivertime', '$pincode')";
 
 if ($conn->query($sql) === TRUE) {
     echo "<b><font color=\"green\">Invoice added successfully!</b></font><hr>";
@@ -330,6 +361,12 @@ if(!empty($invid2)){
     }
 	if(!empty($delivertype2)){
      $update_fields[] = "delivertype='$delivertype2'";
+    }
+	if(!empty($delivertime2)){
+     $update_fields[] = "delivertime='$delivertime2'";
+    }
+	if(!empty($pincode2)){
+     $update_fields[] = "pincode2='$pincode2'";
     }
     if(count($update_fields) > 0){
       $nonempty_fields = implode(", ", $update_fields);
