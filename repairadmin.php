@@ -75,7 +75,7 @@ $(function() {
 	if($enablesecurity == 1) {
 		echo "<p>";
 		echo "<label for=\"pincode\">4 Digit PIN Code <b>(REQUIRED)</b>:</label>";
-		echo "<input type=\"text\" size=\"4\" name=\"pincode\" id=\"pincode\" onKeyDown=\"limitText(this.form.invid,this.form.countdown,4);\" onKeyUp=\"limitText(this.form.invid,this.form.countdown,4);\"; />";
+		echo "<input type=\"text\" size=\"4\" name=\"pincode\" id=\"pincode\" onKeyDown=\"limitText(this.form.pincode,this.form.countdown,4);\" onKeyUp=\"limitText(this.form.pincode,this.form.countdown,4);\"; />";
   		echo "</p>";
 	}
 	?>
