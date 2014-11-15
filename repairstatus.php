@@ -144,7 +144,6 @@ if (isset($_POST[invid])) {
 			return;
 		}
 	}
-    $row = mysql_fetch_assoc($result);
 	$correctdateA = DATE("l m/d", STRTOTIME($row[rpdate]));
 	$correcttimeA = DATE("g:i a", STRTOTIME($row[rptime]));
 	echo $header;
