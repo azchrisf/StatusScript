@@ -366,8 +366,8 @@ if(!empty($invid2)){
      $update_fields[] = "delivertime='$delivertime2'";
     }
 	if(!empty($delivertime2)){
-     $update_fields[] = "delivertime='$pincode2'";
-    }
+     $update_fields[] = "pincode='$pincode2'";
+	}
     if(count($update_fields) > 0){
       $nonempty_fields = implode(", ", $update_fields);
       $sql = "UPDATE repairs SET $nonempty_fields WHERE invid='$invid2'";
