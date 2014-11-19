@@ -1,4 +1,6 @@
-StatusScript
+Status Script 1.5
 ============
 
-Repair Status Script
+Released 11/19/2014
+
+Make sure to view the README.TXT file for important install and upgrade instructions.
