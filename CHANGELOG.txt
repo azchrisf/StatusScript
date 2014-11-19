@@ -1,0 +1,33 @@
++ Added Feature
+- Removed Feature
+* Fixed Issue
+o Other/Misc.
+
+1.5 (11/19/14)
+---
++ Added tabs to the Administration interface
++ Added time picker for time fields
++ Added Date Created to Tickets (can be enabled to be changed)
++ Added ability to delete all Tickets from Admin
++ Added ability to delete Ticket range from Admin
++ Added ability to delete Ticket date range from Admin
++ Added ability to hide Comments section
++ Added "Include mode" for including pages with your own (turns off header & footer)
+* Additional error checking on PIN code entry for Admin
+* Additional error checking on other various areas
+* Merged Bug Fixes from branch-1.1_qfe2
+* Upgraded all MySQL statements to MySQLi for PHP 5.5+ compatibility
+* Additional minor bug fixes and updates
+o General UI improvements in Admin script
+o Added additional buttons to Date picker
+
+1.1 (11/14)
+---
+* Fixed spelling error
+* Made Header and Footer easier to customize
+* Additional minor error checking
++ Added option of PIN for Security (can be changed to ZIP Code, etc. - whatever you want)
+
+1.0 (10/14)
+---
+* Initial Release
