@@ -1,5 +1,5 @@
 Computer Service Servicing Status Script
-Version 1.2
+Version 1.5
 Copyright (c) 2014, Chris Formeister. All Rights Reserved.
 
 +------------+
