@@ -23,12 +23,13 @@ MySQL Server 5.0 or later
 Apache or IIS Webserver
 AJAX-capable Browser (latest Firefox recommended)
 
-INSTALLATION
-------------
++------------+
+|INSTALLATION|
++------------+
 1. Copy all the files (except this one) to your WWW root or subdirectory.
 2. If this is a new install, Import the repairstatus.sql file using phpMyAdmin or an equiv. If this is an upgrade, use the upgradeXX-XX.sql file
    to go from the version you had installed to this version. If you are behind versions, use all of the previous upgrade files - example, if
-   you are upgrading from 1.0 to 1.3, import upgrade10-11.sql, upgrade11-15.sql and so on. If upgrading from 1.1 to 1.5, import
+   you are upgrading from 1.0 to 1.5, import upgrade10-11.sql and upgrade11-15.sql. If upgrading from 1.1 to 1.5, import
    upgrade11-15.sql. See the pattern? :)
 3. Configure your SQL information in the repairadmin-config.php and repairstatus-config.php files.
 3a. Verify the script works. Open repairstatus.php and enter 12345 for the Invoice ID. You should get the results.
@@ -37,14 +38,16 @@ INSTALLATION
 5. Edit the necessary stuff to customize it to your liking, or completely rewrite the script to suit your needs.
 5. I suggest using .htaccess or equiv. to restrict access to the config files and admin page.
 
-SUPPORT
--------
++-------+
+|SUPPORT|
++-------+
 No support is offered for the script outside of bugs. If a bug is present, please post an issue on github under "Issues" on the project page.
 You can obtain the latest versions and bug-fixes at http://www.github.com/azchrisf/StatusScript -
 Bug fixes for the current version are labeled as "QFE x" on the respective file. Download those specific files and upload them to your server.
 
-CHANGES & HELP
---------------
++--------------+
+|CHANGES & HELP|
++--------------+
 The script likely has bugs and is hastily thrown together in areas. It was designed for my personal use, but because of the utility of it, I decided 
 to release it, and by request, have added on to it. I sometimes go thru different areas and clean them up as necessary.
 
@@ -54,22 +57,24 @@ submit changes via Github - http://www.github.com/azchrisf
 
 When you share innovative changes, it helps everyone who may use this script.
 
-DONATIONS
----------
++---------+
+|DONATIONS|
++---------+
 If this script helped you, please consider shooting me an email with a note at azchrisf@gmail.com and I'll send my PayPal email.
 It takes time and resources to program things like this, and at the moment, there is nothing on the market
 that is free like this. As said above, I use this for myself, as I don't want to pay $200+ for something similar.
 
-UPGRADE NOTES
--------------
-
++-------------+
+|UPGRADE NOTES|
++-------------+
 If upgrading from a previous version, make sure to import the upgradeXX-XX.sql file(s) as noted in the INSTALLATION section.
 
 If upgrading from 1.0, DO NOT enable the PIN Security feature retroactively unless you manually edit the database and add
 PIN codes, or the script will fail to load your Invoices.
 
-LICENSE
---------------
++-------+
+|LICENSE|
++-------+
 Feel free to redistribute this package AS-IS.
 This package may be redistributed ONLY if the original files are kept intact as they were originally uploaded, and
 all information is kept intact and in the script.
