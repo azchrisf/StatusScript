@@ -75,13 +75,14 @@ PIN codes, or the script will fail to load your Invoices.
 +-------+
 |LICENSE|
 +-------+
-Feel free to redistribute this package AS-IS.
+This script is licensed under the Creation Commons Attribution-NoDerivatives License.
+
 This package may be redistributed ONLY if the original files are kept intact as they were originally uploaded, and
 all information is kept intact and in the script.
 
 You may use this script for commercial purposes, but I really request you make a donation if you do. You are free to
-make changes to the script as you see fit for your own use, but any changes you make CANNOT be redistributed. If you
-wish, submit them and they may be included in the script for everyone's use.
+make changes to the script as you see fit for your own use, but any changes you make CANNOT be redistributed per the license.
+If you wish, submit them and they may be included in the script for everyone's use.
 
 This script contains files and code from other authors. The license for those files may be different - check the files
 for additional information and license terms.
