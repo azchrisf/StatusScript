@@ -602,7 +602,7 @@ if(!empty($invid2)){
      $update_fields[] = "delivertime='$delivertime2'";
     }
 	if(!empty($pincode2)){
-     $update_fields[] = "pincode2='$pincode2'";
+     $update_fields[] = "pincode='$pincode2'";
     }
     if(count($update_fields) > 0){
       $nonempty_fields = implode(", ", $update_fields);
