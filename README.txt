@@ -81,8 +81,11 @@ This package may be redistributed ONLY if the original files are kept intact as 
 all information is kept intact and in the script.
 
 You may use this script for commercial purposes, but I really request you make a donation if you do. You are free to
-make changes to the script as you see fit for your own use, but any changes you make CANNOT be redistributed per the license.
-If you wish, submit them and they may be included in the script for everyone's use.
+make changes to the script as you see fit for your own use, but any changes you make CANNOT be redistributed per the license. If you wish, submit them and they may be included in the script for everyone's use.
+
+You must keep the Copyrights intact that are displayed by the program. You can add to it, however - for example: Copyright (c) My Company 2015. Repair Status Script 1.5 (c) Chris Formeister
+
+For those who want to just remove it: If you want to remove the copyrights, contact me and for a small fee ($20) you can remove it. If you remove it and I catch you, be prepared for legal hellstorm and lots of DMCA notices to your host.
 
 This script contains files and code from other authors. The license for those files may be different - check the files
 for additional information and license terms.
