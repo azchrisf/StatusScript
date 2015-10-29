@@ -41,7 +41,10 @@ AJAX-capable Browser (latest Firefox recommended)
 +-------+
 |SUPPORT|
 +-------+
-No support is offered for the script outside of bugs. If a bug is present, please post an issue on github under "Issues" on the project page.
+NO SUPPORT IS OFFERED FOR THE SCRIPT OUTSIDE OF BUGS WITH THE ORIGINAL, UNMODIFIED FILES. If a bug is present, please post an issue on github under "Issues" on the project page or contactme.
+
+If you modify the script, the issues you may encounter are again your responsibility. I do not do custom work. I suggest hiring or finding a PHP programmer to assist you if you need modifications for your specific business.
+
 You can obtain the latest versions and bug-fixes at http://www.github.com/azchrisf/StatusScript -
 Bug fixes for the current version are labeled as "QFE x" on the respective file. Download those specific files and upload them to your server.
 
